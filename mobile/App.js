@@ -176,3 +176,6 @@ const styles = StyleSheet.create({
         fontSize: 19,
         color: '#0000 ',
     },
+
+
+    /**continuação css */
