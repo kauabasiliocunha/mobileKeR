@@ -108,3 +108,50 @@ export default function App() {
             );
         }
     
+
+
+
+        //**Tela quiz */
+
+
+
+
+
+
+
+
+        
+
+
+
+    if (tela === "resultado") {
+        return (
+            <View style={styles.container}>
+                {perguntasErradas.length > 0 && (
+                    <View style={styles.container}>
+                        <Text style={styles.t6}>Perguntas incorretas</Text>
+                        <FlatList
+                            data={perguntasErradas}
+                            renderItem={({ item }) => (
+                                <View style={styles.container}>
+                                    <Text style={styles.t4}>{item.pergunta}</Text>
+                                    <Text style={styles.t2}>Resposta Certa: {item.resposta}</Text>
+                                </View>
+                            )}
+                            keyExtractor={(item, index) => index.toString()}
+                        />
+                    </View>
+                )}
+                <Text style={styles.t5}>Você acertou {resultado} de {perguntas.length} perguntas</Text>
+
+
+                <View style={styles.botao}>
+                    <Button color={'#205e53'} title="Voltar ao Início" onPress={() => setTela("inicial")} />
+                </View>
+            </View>
+        );
+    }
+
+
+    return null;
+}
