@@ -155,3 +155,24 @@ export default function App() {
 
     return null;
 }
+
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 5,
+        backgroundColor: '#d6f7f2'
+    },
+    paragraph: {
+        fontSize: 35,
+        textAlign: 'center',
+        color: '#205e53'
+    },
+    t2: {
+        padding: 5,
+        fontSize: 19,
+        color: '#0000 ',
+    },
