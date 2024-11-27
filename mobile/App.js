@@ -13,26 +13,26 @@ export default function App() {
     const [resultado, setResultado] = useState(null);
     const [perguntasErradas, setPerguntasErradas] = useState([]);
 
-
-
-
-
-
-
-
-
-
 //*Perguntas Pais RAi//
+const perguntasPorPais = {
+    "Tuvalu": [
+        { pergunta: "Qual é a capital de Tuvalu?", opcoes: ["Funafuti", "Vaitupu", "Nanumanga"], resposta: "Funafuti" },
+        { pergunta: "Qual é a população estimada de Tuvalu?", opcoes: ["Aproximadamente 11.000", "Aproximadamente 25.000", "Aproximadamente 50.000"], resposta: "Aproximadamente 11.000" },
+        { pergunta: "Em que oceano Tuvalu está localizado?", opcoes: ["Oceano Índico", "Oceano Atlântico", "Oceano Pacífico"], resposta: "Oceano Pacífico" }
+    ],
+    "Comores": [
+        { pergunta: "Qual é a capital das Comores?", opcoes: ["Moroni", "Mutsamudu", "Fomboni"], resposta: "Moroni" },
+        { pergunta: "As Comores são conhecidas pela exportação de qual especiaria?", opcoes: ["Canela", "Cravo-da-índia", "Baunilha"], resposta: "Baunilha" },
+        { pergunta: "Onde as Comores estão localizadas?", opcoes: ["Oceano Pacífico", "Oceano Atlântico", "Oceano Índico"], resposta: "Oceano Índico" }
+    ],
+    "São Tomé e Príncipe": [
+        { pergunta: "Qual é a capital de São Tomé e Príncipe?", opcoes: ["São Tomé", "Príncipe", "Porto Alegre"], resposta: "São Tomé" },
+        { pergunta: "Qual é a língua oficial de São Tomé e Príncipe?", opcoes: ["Inglês", "Português", "Francês"], resposta: "Português" },
+        { pergunta: "São Tomé e Príncipe fica em que região do mundo?", opcoes: ["Ásia", "África", "América do Sul"], resposta: "África" }
+    ]
+};
 
 
-
-
-
-
-
-
-
-    
 
     useEffect(() => {
         const buscarPais = async (latitude, longitude) => {
