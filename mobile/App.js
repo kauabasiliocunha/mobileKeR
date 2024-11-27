@@ -119,22 +119,34 @@ const perguntasPorPais = {
             );
         }
     
-
-
-
-        //**Tela quiz */
-
-
-
-
-
-
-
-
-        
-
-
-
+        if (tela === "quiz") {
+            return (
+                <View style={styles.container}>
+                    <FlatList
+                        data={perguntas}
+                        renderItem={({ item, index }) => (
+                            <View key={index}>
+                                <Text style={styles.t4}>{item.pergunta}</Text>
+                                {item.opcoes.map((opcao, i) => (
+                                    <View style={styles.resposta} key={i}>
+                                        <Button
+                                            title={opcao}
+                                            onPress={() => setRespostas({ ...respostas, [index]: opcao })}
+                                            color={respostas[index] === opcao ? '#205e53' : '#54988c'}
+                                        />
+                                    </View>
+                                ))}
+                            </View>
+                        )}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
+                    <View style={styles.botao}>
+                        <Button color={'#205e53'} title="Enviar Respostas" onPress={enviarRespostas} />
+                    </View>
+                </View>
+            );
+        }
+    
     if (tela === "resultado") {
         return (
             <View style={styles.container}>
