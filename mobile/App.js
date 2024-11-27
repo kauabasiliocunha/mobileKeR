@@ -3,8 +3,6 @@ import { Text, View, StyleSheet, Button, FlatList } from 'react-native';
 import * as Location from 'expo-location';
 import axios from 'axios';
 
-
-
 export default function App() {
     const [pais, setPais] = useState("");
     const [tela, setTela] = useState("inicial");
@@ -199,6 +197,33 @@ const styles = StyleSheet.create({
         fontSize: 19,
         color: '#0000 ',
     },
-
-
-    /**continuação css */
+    t4: {
+        marginTop: 50,
+        fontSize: 22,
+        textAlign: 'center',
+        color: '#205e53',
+    },
+    t5: {
+        fontSize: 22,
+        textAlign: 'center',
+        color: '#205e53',
+        marginBottom: 30,
+    },
+    t6: {
+        marginTop: '50%',
+        fontSize: 26,
+        textAlign: 'center',
+        color: '#205e53',
+        fontWeight: '700',
+    },
+    resposta: {
+        marginTop: 20,
+        textAlign: 'center',
+    },
+    botao: {
+        marginTop: 5,
+        width: 300,
+        marginBottom: 20,
+        height: 50,
+    }
+});
