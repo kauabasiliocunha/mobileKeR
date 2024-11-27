@@ -33,7 +33,6 @@ const perguntasPorPais = {
 };
 
 
-
     useEffect(() => {
         const buscarPais = async (latitude, longitude) => {
             const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
@@ -55,16 +54,28 @@ const perguntasPorPais = {
             return null;
         };
 
+        const buscarCoordenadas = async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                return;
+            }
 
 
+            let localizacao = await Location.getCurrentPositionAsync({});
+            const lat = localizacao.coords.latitude;
+            const long = localizacao.coords.longitude;
 
 
+            const paisAtual = await buscarPais(lat, long);
+            setPais(paisAtual);
+            if (perguntasPorPais[paisAtual]) {
+                setPerguntas(perguntasPorPais[paisAtual]);
+            }
+        };
 
-//**buscar coordenadas */
 
-
-
-
+        buscarCoordenadas();
+    }, []);
 
         const enviarRespostas = () => {
             let acertos = 0;
